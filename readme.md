@@ -25,11 +25,14 @@ var archive = await ArchiveCollection.FromFilesAsync(files);
 var stream = archive["file.dat"].GetStream();
 ```
 
-#### Searching for a file
+#### Searching for a file (using a regular expression)
 
 ```csharp
-// Search for all files that begin with `astralfoxy`
-var matches = archive.GetFiles(@"^astralfoxy");
+// Search for all files that begin with `astralfoxy` (using a regular expression)
+var files = archive.GetFiles(@"^astralfoxy");
+
+// Alternatively, you can iterate through the list of files...
+var files = archives.Files.Where(x => x.Name == "astralfoxy.dat");
 ```
 
 #### Creating an archive

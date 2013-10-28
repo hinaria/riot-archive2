@@ -32,7 +32,7 @@ var stream = archive["file.dat"].GetStream();
 var files = archive.GetFiles(@"^astralfoxy");
 
 // Alternatively, you can iterate through the list of files...
-var files = archives.Files.Where(x => x.Name == "astralfoxy.dat");
+var files = archive.Files.Where(x => x.Name == "astralfoxy.dat");
 ```
 
 #### Creating an archive

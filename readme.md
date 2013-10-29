@@ -1,8 +1,8 @@
 # riot-archive2
 
-`riot-archive2` is the reference library for Riot Archive Files (RAFs), the storage format used by the League of Legends game.
+`riot-archive2` is the reference library for Riot Archive Files (RAFs), the file storage format used by League of Legends.
 
-It used in astralfoxy's Wintermint client in addition to many other large scale sites.
+It's used in astralfoxy's Wintermint client, as well as in many other third party programs.
 
 ## Example usage
 

@@ -2,8 +2,6 @@
 
 `riot-archive2` is the reference library for Riot Archive Files (RAFs), the file storage format used by League of Legends.
 
-It's used in astralfoxy's Wintermint client, as well as in many other third party programs.
-
 ## Example usage
 
 #### Opening and reading from an archive
@@ -28,11 +26,11 @@ var stream = archive["file.dat"].GetStream();
 #### Searching for a file (using a regular expression)
 
 ```csharp
-// Search for all files that begin with `astralfoxy` (using a regular expression)
-var files = archive.GetFiles(@"^astralfoxy");
+// Search for all files that begin with `hello` (using a regular expression)
+var files = archive.GetFiles(@"^hello");
 
 // Alternatively, you can iterate through the list of files...
-var files = archive.Files.Where(x => x.Name == "astralfoxy.dat");
+var files = archive.Files.Where(x => x.Name == "hello.dat");
 ```
 
 #### Creating an archive
@@ -42,9 +40,9 @@ var archive = new WriteOnlyArchive();
 archive.SetOutput("output.raf");
 
 // write some files to the archive
-await archive.WriteAsync("astralfoxy.png", stream);
-await archive.WriteAsync("wintermint.exe", stream2);
-await archive.WriteAsync("riot-games.png", stream3);
+await archive.WriteAsync("a.png", stream);
+await archive.WriteAsync("b.exe", stream2);
+await archive.WriteAsync("c.png", stream3);
 
 await archive.CommitAsync();
 ```
@@ -61,5 +59,4 @@ reading from one, use the `Archive.FromFileAsync(string path, bool readChecksumF
 
 - `riot-archive2` MIT licensed.
 - Feel free to use it however you want.
-- But I'd love to hear about how you're using it! Email me at `foxy::astralfoxy:com`.
 - Please contribute any improvements you make back to this repository.
